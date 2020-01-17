@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 
 <html>
-
+<body>
 <script>
 
-prompt("hello")
+function score()
+{
+    let s = 0;
+    let win = false;
 
+    for (let i = 0; i < 5; i++)
+    {
+        win = Play;
+        if(win == true)
+        {
+            s++;
+            win = false;
+        }
+        
+        
+
+        
+    }
+
+    if (s >=3)
+    {
+        alert("You won");
+    }
+    else
+    {
+        alert("You lost");
+    }
+}
+
+function computerPlay()
+{
+let num;
+num = Math.floor(Math.random() * 2 + 1);
+
+switch(num)
+{
+case 1:
+return "rock";
+
+case 2:
+return "paper";
+
+case 3:
+return "scissors";
+}
+
+function Play()
+{
+
+let player;
+let temp;
+let comp = computerPlay();
+temp = Prompt("Your Move");
+player = temp.toLowerCase();
+
+if(player == "rock" && comp == "paper")
+{
+    return true;
+}
+else if (player == "paper" && comp == "rock")
+{
+    return true;
+}
+else if (player == "rock" && comp == "scissors")
+{
+    return true;
+}
+else
+{
+    return false;
+}
+
+}
+
+
+
+
+}
+score();
 </script>
 
-
+</body>
 
 </html>
