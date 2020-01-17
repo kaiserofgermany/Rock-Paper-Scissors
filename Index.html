@@ -2,44 +2,29 @@
 
 <html>
 <body>
+
+<p>
+Help    
+</p>
+
+
+
 <script>
 
-function score()
-{
-    let s = 0;
-    let win = false;
-
-    for (let i = 0; i < 5; i++)
-    {
-        win = Play;
-        if(win == true)
-        {
-            s++;
-            win = false;
-        }
-        
-        
-
-        
-    }
-
-    if (s >=3)
-    {
-        alert("You won");
-    }
-    else
-    {
-        alert("You lost");
-    }
-}
+score();
 
 function computerPlay()
 {
+    
 let num;
-num = Math.floor(Math.random() * 2 + 1);
+num = Math.random()*2 + 1;
+num = Math.floor(num);
 
 switch(num)
 {
+    default:
+    
+
 case 1:
 return "rock";
 
@@ -49,14 +34,18 @@ return "paper";
 case 3:
 return "scissors";
 }
+}
 
 function Play()
 {
-
+    
 let player;
 let temp;
-let comp = computerPlay();
-temp = Prompt("Your Move");
+let comp;
+comp = computerPlay();
+
+temp = prompt("Your Move");
+
 player = temp.toLowerCase();
 
 if(player == "rock" && comp == "paper")
@@ -79,10 +68,40 @@ else
 }
 
 
+function score()
+{
+    
+    let s = 0;
+    let win;
 
+    for (let i = 0; i < 5; i++)
+    {
+        
+        win = Play();
+        
+        if(win == true)
+        {
+            s++;
+            win = false;
+        }
+        
+        
 
+        
+    }
+
+    if (s >=3)
+    {
+        alert("You won");
+    }
+    else
+    {
+        alert("You lost");
+    }
 }
-score();
+
+
+
 </script>
 
 </body>
